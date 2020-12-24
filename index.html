@@ -1,0 +1,45 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="80px" height="80px" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg>
+<h1>Avatar</h1>
+<p>
+  <h4>Airtable manager powered by Vercel Serverless Functions.</h4>
+  Read, create, and update records for Alamo City Hacks with this serverless application.
+</p>
+<br />
+<h2>Avatar URL Generator</h2>
+<label for="requesttype">Request Type</label>
+<select id="requesttype" oninput="updateURL()" name="requests">
+  <option value="get">GET</option>
+  <option value="create">CREATE</option>
+  <option value="update">UPDATE</option>
+</select>
+<br />
+<label for="baseid">Base ID</label>
+<input id="baseid" oninput="updateURL()"></input>
+<br />
+<label for="tablename">Table Name</label>
+<input id="tablename" oninput="updateURL()"></input>
+<br />
+<label for="formula">Formula</label>
+<input id="formula" oninput="updateURL()"></input>
+<br />
+<label for="body">Body</label>
+<textarea id="body" oninput="updateURL()"></textarea>
+<br />
+<a target="_blank" id="url"></a>
+<script>
+    let requesttype = document.getElementById('requesttype');
+    let baseid = document.getElementById('baseid');
+    let tablename = document.getElementById('tablename');
+    let formula = document.getElementById('formula');
+    let body = document.getElementById('body');
+    let url = document.getElementById('url');
+    function updateURL() {
+        let urlHref = `https://avatar-tau.vercel.app/api/${requesttype.value != '' ? requesttype.value : ''}?${baseid.value != '' ? `baseid=${baseid.value}` : ''}${tablename.value != '' ? `&tablename=${tablename.value}` : ''}${formula.value != '' ? `&formula=${formula.value}` : ''}${body.value != '' ? `&body=${body.value}` : ''}`;
+        url.innerHTML = urlHref;
+        url.href = urlHref;
+    }
+</script>
