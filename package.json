@@ -1,6 +1,6 @@
 {
   "name": "avatar",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Airtable manager powered by Vercel Serverless Functions.",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/alamocityhacks/avatar.git"
   },
-  "keywords": [
-    "airtable",
-    "manager",
-    "api",
-    "hackathon",
-    "backend"
-  ],
   "author": "Sarthak Mohanty <sarthaktexas@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
