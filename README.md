@@ -7,3 +7,5 @@
   Read, create, and update records for Alamo City Hacks with this serverless application.
 </p>
 <br />
+
+&copy; Sarthak Mohanty 2020. Licensed under [Apache-2.0](LICENSE), see [LICENSE](LICENSE) for more info.
